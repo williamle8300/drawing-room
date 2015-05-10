@@ -1,0 +1,48 @@
+{
+  "name": "drawing-room",
+  "version": "1.0.25",
+  "description": "Personal boilerplate for starting authoring new `npm` modules",
+  "devDependencies": {
+    "beefy": "^2.1.5",
+    "brfs": "^1.4.0",
+    "catw": "^1.0.0",
+    "less": "^2.5.0",
+    "tap": "^0.7.1",
+    "tap-spec": "^3.0.0",
+    "tape": "^4.0.0",
+    "watchify": "^3.2.1"
+  },
+  "scripts": {
+    "dev": "beefy index.js:bundle.js --live true 3000 -- -t brfs",
+    "dev-test": "beefy test/index.js:bundle.js --live true 8000 ",
+    "watch": "npm run watch-js & npm run watch-css",
+    "build": "npm run build-js & npm run build-css",
+    "watch-js": "watchify index.js -o static/bundle.js --debug --verbose",
+    "watch-css": "catw -c 'lessc -' 'style/*.less' -o static/bundle.css -v",
+    "build-js": "browserify index.js -o static/bundle.js",
+    "build-css": "catw -c 'lessc -' 'style/*.less' > static/bundle.css",
+    "test-dev": "beefy test/index.js:bundle.js --live true 3000 ",
+    "test": "tape test/index.js | tap-spec",
+    "ggwp": "git commit -am 'ggwp' && git push && npm version patch && npm publish"
+  },
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamle8300/drawing-room.git"
+  },
+  "bugs": {
+    "url": "https://github.com/williamle8300/drawing-room/issues"
+  },
+  "homepage": "https://github.com/williamle8300/drawing-room#readme",
+  "readme": "\n# drawing-room\n\nmake npm modules fast\n\n# Are you sure? YES\n\n1. What's the problem, and has it already been solved?\n2. If it hasn't, proceed.\n\n# Rule\n\nElegant solutions are powerful and trivial\n\n# Get a drawing room\n\n```shell\ncd ~/Desktop || npm install drawing-room || mv node_modules/drawing-room . || mv node_modules ~/.Trash || cd drawing-room || npm install || mate .\n```\n\n1. what is it? read, play, draw, write\n2. abstract\n3. determine what preexisting + non-existent modules are needed\n4. draw ––>nonJS ––>pseudoJS\n5. engineer. remember to `me⇥` often\n6. `tape`, README, git, npm\n\n# substack's approach\n\n> Now SUBSTACK doesn't do that. He just wants the most dependable, easy to understand and smallest module he can find (or make) to fulfil his objective.\n> In other words, he subscribes to the UNIX philosophy.\n\n> [...]\n\n> To him, it's about taking the time to understand the abstractions.\n\n## workflow ([link](https://gist.github.com/khoomeister/5010943))\n\n- SUBSTACK codes as usual:\n  - Uses console.dir alot to inspect & debug\n  - DIDN'T TDD - CREATES AN EXAMPLE.JS THAT REQUIRES THE MODULE AND TESTS ITS FUNCTIONALITY\n  - Codes in vim & switches to a terminal every so often to run the example.js script\n- IF HE NOTICES AN OPPORTUNITY TO MODULARISE, HE IMMEDIATELY MOVES THE FUNCTION INTO A NEW FILE & CHANGES THE FUNCTION DECLARATION TO MODULE.EXPORTS = ... (WHEN I SAY IMMEDIATELY, I REALLY DO MEAN IMMEDIATELY).\n- When he's happy with the module, `npm install tape tap  --save-dev` *(own note: added `--save-dev`)*\n- Refactors the example.js file as a set of tests (see below).\n- Writes README.markdown from scratch with introduction, API documentation & license (API documentation is quick & easy to write when you have small modules).\n- Runs pkginit to create package.json. *(own note: i run pkginit as the first step)*\n- Create GitHub repo and npm publish",
+  "readmeFilename": "README.md",
+  "gitHead": "1ee9c3396d5632a3b50b8634b2f568d5c8efb5ea",
+  "_id": "drawing-room@1.0.25",
+  "_shasum": "ce6b1a47b7b003d4c52e1f16c6e0f08d820138cf",
+  "_from": "drawing-room@*",
+  "dependencies": {
+    "get-pixels": "^3.2.2"
+  }
+}
