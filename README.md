@@ -53,5 +53,3 @@ cd ~/Desktop && npm install drawing-room && mv node_modules/drawing-room ~/Deskt
 - Writes README.markdown from scratch with introduction, API documentation & license (API documentation is quick & easy to write when you have small modules).
 - Runs pkginit to create package.json. *(own note: i run pkginit as the first step)*
 - Create GitHub repo and npm publish
-
-# maxogden
