@@ -1,6 +1,6 @@
 {
   "name": "drawing-room",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "description": "Personal boilerplate for starting authoring new `npm` modules",
   "devDependencies": {
     "beefy": "^2.1.5",
